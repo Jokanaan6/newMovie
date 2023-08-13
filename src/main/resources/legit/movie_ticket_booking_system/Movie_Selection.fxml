@@ -78,7 +78,7 @@
                   </ImageView>
                   <ImageView fitHeight="184.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../MovieImg/Oppenheimer.jpg" />
+                        <Image url="@../../MovieImg/LaLaLand.jpg" />
                      </image>
                   </ImageView>
                </children>
