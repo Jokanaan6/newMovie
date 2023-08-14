@@ -15,13 +15,13 @@
             <Font name="Times New Roman Bold" size="50.0" />
          </font>
       </Label>
-      <TextField fx:id="username" layoutX="132.0" layoutY="148.0" promptText="Username" />
-      <PasswordField fx:id="password" layoutX="132.0" layoutY="201.0" promptText="Password" />
+      <TextField fx:id="username" layoutX="132.0" layoutY="148.0" onAction="#userLogIn" promptText="Username" />
+      <PasswordField fx:id="password" layoutX="132.0" layoutY="201.0" onAction="#userLogIn" promptText="Password" />
       <Label layoutX="70.0" layoutY="152.0" text="Username:" />
       <Label layoutX="72.0" layoutY="205.0" text="Password:" />
       <Button fx:id="button" layoutX="146.0" layoutY="292.0" mnemonicParsing="false" onAction="#userLogIn" text="Login" />
       <Label layoutX="70.0" layoutY="360.0" text="Don't have an account?" />
-      <Button fx:id="Regis" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="189.0" layoutY="356.0" mnemonicParsing="false" onAction="#Registeruser" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: transparent;" text="Register here" textFill="#1052c3" AnchorPane.leftAnchor="189.0" />
+      <Button fx:id="Regis" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="189.0" layoutY="356.0" mnemonicParsing="false" onAction="#Switchregister" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: transparent;" text="Register here" textFill="#1052c3" AnchorPane.leftAnchor="189.0" />
       <Label layoutX="158.0" layoutY="122.0" />
       <Label fx:id="wrongLogIn" layoutX="132.0" layoutY="238.0" />
    </AnchorPane>
