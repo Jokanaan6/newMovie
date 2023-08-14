@@ -1,58 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="420.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/20.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.Ticket">
+<AnchorPane prefHeight="420.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.Ticket">
    <Label layoutX="120.0" layoutY="22.0" prefHeight="43.0" prefWidth="110.0" text="Ticket">
       <font>
-         <Font name="Times New Roman Bold" size="38.0"/>
+         <Font name="Times New Roman Bold" size="38.0" />
       </font>
    </Label>
    <HBox layoutX="58.0" layoutY="157.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="58.0">
       <Label prefHeight="20.0" prefWidth="75.0" text="Username: ">
          <font>
-            <Font name="System Bold" size="14.0"/>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Username"/>
+      <Label fx:id="Username" />
    </HBox>
    <HBox layoutX="87.0" layoutY="177.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="83.0">
       <Label prefHeight="20.0" prefWidth="50.0" text="Movie: ">
          <font>
-            <Font name="System Bold" size="14.0"/>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Movie"/>
+      <Label fx:id="Movie" />
    </HBox>
    <HBox layoutX="87.0" layoutY="197.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="91.0">
       <Label prefHeight="20.0" prefWidth="42.0" text="Date: ">
          <font>
-            <Font name="System Bold" size="14.0"/>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Date"/>
+      <Label fx:id="Date" />
    </HBox>
    <HBox layoutX="87.0" layoutY="217.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="91.0">
       <Label prefHeight="20.0" prefWidth="42.0" text="Time: ">
          <font>
-            <Font name="System Bold" size="14.0"/>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Time"/>
+      <Label fx:id="Time" />
    </HBox>
    <HBox layoutX="41.0" layoutY="237.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="41.0">
       <Label prefHeight="20.0" prefWidth="91.0" text="Seat number:">
          <font>
-            <Font name="System Bold" size="14.0"/>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Seat"/>
+      <Label fx:id="Seat" />
    </HBox>
-   <Button layoutX="111.0" layoutY="322.0" mnemonicParsing="false" text="Book Another Ticket"/>
-   <Button layoutX="152.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="Exit"/>
+   <Button fx:id="Another" layoutX="111.0" layoutY="322.0" mnemonicParsing="false" onAction="#Back" text="Book Another Ticket" />
+   <Button fx:id="Exit" layoutX="152.0" layoutY="367.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="46.0" text="Exit" />
 </AnchorPane>
-
