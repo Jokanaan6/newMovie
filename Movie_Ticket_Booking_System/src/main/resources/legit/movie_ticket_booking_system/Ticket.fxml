@@ -18,15 +18,15 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Username" />
+      <Label fx:id="Username" prefHeight="32.0" prefWidth="125.0" />
    </HBox>
-   <HBox layoutX="87.0" layoutY="177.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="83.0">
+   <HBox layoutX="87.0" layoutY="177.0" prefHeight="20.0" prefWidth="260.0" AnchorPane.leftAnchor="83.0">
       <Label prefHeight="20.0" prefWidth="50.0" text="Movie: ">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Movie" />
+      <Label fx:id="Movie" prefHeight="20.0" prefWidth="207.0" />
    </HBox>
    <HBox layoutX="87.0" layoutY="197.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="91.0">
       <Label prefHeight="20.0" prefWidth="42.0" text="Date: ">
@@ -34,7 +34,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Date" />
+      <Label fx:id="Date" prefHeight="30.0" prefWidth="148.0" />
    </HBox>
    <HBox layoutX="87.0" layoutY="217.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="91.0">
       <Label prefHeight="20.0" prefWidth="42.0" text="Time: ">
@@ -42,7 +42,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Time" />
+      <Label fx:id="Time" prefHeight="25.0" prefWidth="29.0" />
    </HBox>
    <HBox layoutX="41.0" layoutY="237.0" prefHeight="16.0" prefWidth="200.0" AnchorPane.leftAnchor="41.0">
       <Label prefHeight="20.0" prefWidth="91.0" text="Seat number:">
@@ -50,7 +50,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Seat" />
+      <Label fx:id="Seat" prefHeight="28.0" prefWidth="32.0" />
    </HBox>
    <Button fx:id="Another" layoutX="111.0" layoutY="322.0" mnemonicParsing="false" onAction="#Back" text="Book Another Ticket" />
    <Button fx:id="Exit" layoutX="152.0" layoutY="367.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="46.0" text="Exit" />
