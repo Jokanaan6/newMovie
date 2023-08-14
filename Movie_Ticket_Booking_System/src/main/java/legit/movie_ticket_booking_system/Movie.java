@@ -70,22 +70,22 @@ public class Movie {
                 ", " + selectedMonth + " " + selectedYear + " at " + selectedHour + ":"  +
                 ". Your seat is " + selectedSeat + ".";
 
-
+        // Create an alert to show the confirmation message
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Booking Confirmation");
         alert.setHeaderText(null);
         alert.setContentText(confirmationMessage);
 
-
+        // Add buttons to the alert
         ButtonType confirmButtonType = new ButtonType("Confirm");
         ButtonType cancelButtonType = new ButtonType("Cancel");
         alert.getButtonTypes().setAll(confirmButtonType, cancelButtonType);
 
-
+        // Show the alert and wait for the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == confirmButtonType) {
                 try {
-
+                    // Create a bundle of data to pass to the Ticket scene
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Ticket.fxml"));
                     Parent root;
                     try {
@@ -93,7 +93,7 @@ public class Movie {
                         Ticket ticketController = loader.getController();
                         ticketController.setData(selectedMovie, selectedDay, selectedMonth, selectedYear, selectedHour, selectedSeat);
 
-
+                        // Create a new scene and show it
                         Stage stage = new Stage();
                         stage.setScene(new Scene(root));
                         stage.show();
