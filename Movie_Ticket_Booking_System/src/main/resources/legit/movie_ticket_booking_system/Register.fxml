@@ -8,26 +8,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane layoutX="-2.0" prefHeight="402.0" prefWidth="343.0">
-         <children>
-            <Label layoutX="80.0" layoutY="27.0" text="Register">
-               <font>
-                  <Font name="Times New Roman Bold" size="50.0" />
-               </font>
-            </Label>
-            <TextField layoutX="132.0" layoutY="127.0" promptText="Username" />
-            <PasswordField layoutX="132.0" layoutY="168.0" promptText="Password" />
-            <Label layoutX="71.0" layoutY="131.0" text="Username:" />
-            <Label layoutX="73.0" layoutY="172.0" text="Password:" />
-            <Button layoutX="139.0" layoutY="260.0" mnemonicParsing="false" text="Register" />
-            <Label layoutX="70.0" layoutY="360.0" text="Already have an account?" />
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="189.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: transparent;" text="Login here" textFill="#1052c3" AnchorPane.leftAnchor="189.0" />
-            <PasswordField layoutX="132.0" layoutY="201.0" promptText="Confirm Password" />
-            <Label layoutX="31.0" layoutY="205.0" text="Confirm Password:" />
-            <Label layoutX="155.0" layoutY="234.0" />
-         </children>
-      </AnchorPane>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.LoginController">
+   <AnchorPane layoutX="-2.0" prefHeight="402.0" prefWidth="343.0">
+      <Label layoutX="80.0" layoutY="27.0" text="Register">
+         <font>
+            <Font name="Times New Roman Bold" size="50.0" />
+         </font>
+      </Label>
+      <TextField fx:id="registerUsername" layoutX="132.0" layoutY="127.0" onAction="#userRegister" promptText="Username" />
+      <PasswordField fx:id="registerPassword" layoutX="132.0" layoutY="168.0" onAction="#Registeruser" promptText="Password" />
+      <Label layoutX="71.0" layoutY="131.0" text="Username:" />
+      <Label layoutX="73.0" layoutY="172.0" text="Password:" />
+      <Button fx:id="ComfirmReg" layoutX="139.0" layoutY="260.0" mnemonicParsing="false" onAction="#userRegister" text="Register" />
+      <Label layoutX="70.0" layoutY="360.0" text="Already have an account?" />
+      <Button fx:id="LoginBack" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="189.0" layoutY="356.0" mnemonicParsing="false" onAction="#Return" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: transparent;" text="Login here" textFill="#1052c3" AnchorPane.leftAnchor="189.0" />
+      <PasswordField fx:id="confirmPassword" layoutX="132.0" layoutY="201.0" onAction="#userRegister" promptText="Confirm Password" />
+      <Label layoutX="31.0" layoutY="205.0" text="Confirm Password:" />
+      <Label layoutX="155.0" layoutY="234.0" />
+      <Label fx:id="wrongLogIn" layoutX="141.0" layoutY="234.0" />
+   </AnchorPane>
 </Pane>
