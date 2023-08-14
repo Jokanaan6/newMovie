@@ -52,8 +52,7 @@ public class Movie {
     }
     @FXML
    private void Logout(ActionEvent ignoredEvent) throws IOException {
-        Main m= new Main();
-        m.changeScene("Login.fxml");
+        Main.changeScene("Login.fxml");
 
     }
 

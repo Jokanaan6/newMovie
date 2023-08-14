@@ -39,6 +39,7 @@ public class LoginController {
         String enteredPassword = password.getText();
 
         if (Main.isValidUser(enteredUsername, enteredPassword)) {
+            Main.currentUsername = enteredUsername; // Store the username
             Main.changeScene("Movie_Selection.fxml");
         } else {
             wrongLogIn.setText("Invalid username or password.");

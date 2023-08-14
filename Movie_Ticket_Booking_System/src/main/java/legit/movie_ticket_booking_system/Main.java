@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Main extends Application {
     private static Stage stg;
     private static final HashMap<String, String> users = new HashMap<>(); // Store registered users
-
+    public static String currentUsername;
     @Override
     public void start(Stage primaryStage) throws IOException {
         stg = primaryStage;
