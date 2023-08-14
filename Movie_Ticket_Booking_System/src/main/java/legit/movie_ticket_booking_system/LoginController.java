@@ -30,7 +30,7 @@ public class LoginController {
 
     @FXML
     void Switchregister(ActionEvent ignoredEvent) throws IOException {
-        Main.changeScene("Register.fxml");
+        Main.changeScene("Register.fxml", 320, 500);
     }
 
     @FXML
@@ -39,8 +39,8 @@ public class LoginController {
         String enteredPassword = password.getText();
 
         if (Main.isValidUser(enteredUsername, enteredPassword)) {
-            Main.currentUsername = enteredUsername; // Store the username
-            Main.changeScene("Movie_Selection.fxml");
+            Main.currentUsername = enteredUsername;
+            Main.changeScene("Movie_Selection.fxml", 600, 600);
         } else {
             wrongLogIn.setText("Invalid username or password.");
         }
@@ -50,6 +50,3 @@ public class LoginController {
         this.main = main;
     }
 }
-
-
-

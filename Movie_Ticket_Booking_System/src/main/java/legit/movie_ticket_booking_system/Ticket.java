@@ -11,7 +11,6 @@ import java.io.IOException;
 
 public class Ticket {
 
-
     @FXML
     public Button Another;
 
@@ -40,6 +39,7 @@ public class Ticket {
         // Update the label with the username
         Username.setText(username);
     }
+
     public void setData(String movie, String day, String month, String year, String hour, String seat) {
         Movie.setText(movie);
         Date.setText(day + " " + month + " " + year);
@@ -48,16 +48,14 @@ public class Ticket {
     }
 
     public void Back(ActionEvent ignoredEvent) throws IOException {
-        Main.changeScene("Movie_Selection.fxml");
+        Main.changeScene("Movie_Selection.fxml", 600, 600);
         Platform.runLater(() -> {
             Stage stage = (Stage) Another.getScene().getWindow();
             stage.close();
         });
     }
 
-
     public void Close(ActionEvent ignoredEvent) {
         Platform.exit();
     }
 }
-
