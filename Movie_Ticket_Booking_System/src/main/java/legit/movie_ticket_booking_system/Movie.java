@@ -45,7 +45,7 @@ public class Movie {
         dayChoiceBox.getItems().addAll("14","15","16","17","18","19","20","21","22");
         hourChoiceBox.getItems().addAll("9:30 am- 11:50 pm", "1:30 pm-3:45 pm", "4:00 pm- 6:30 pm");
 
-        movieChoiceBox.getItems().addAll("Spider-Man: Across the Spider-Verse", "Barbie", "Oppenheimer");
+        movieChoiceBox.getItems().addAll("Spider-Man: Across the Spider-Verse", "Barbie", "Oppenheimer", "La La Land");
         seatChoiceBox.getItems().addAll("A1", "A2","A3","B1","B2","B3", "C1","C2","C3");
         yearChoiceBox.getItems().addAll("2023");
         monthChoiceBox.getItems().addAll("July", "August");
