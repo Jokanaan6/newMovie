@@ -38,13 +38,13 @@
       </Label>
       <ChoiceBox fx:id="monthChoiceBox" layoutX="56.0" layoutY="428.0" prefHeight="25.0" prefWidth="81.0" />
       <ChoiceBox fx:id="dayChoiceBox" layoutX="137.0" layoutY="428.0" prefHeight="25.0" prefWidth="43.0" />
-      <ChoiceBox fx:id="yearChoiceBox" layoutX="181.0" layoutY="428.0" prefHeight="25.0" prefWidth="61.0" />
-      <Label layoutX="56.0" layoutY="459.0" text="Time:">
+      <ChoiceBox fx:id="yearChoiceBox" layoutX="180.0" layoutY="428.0" prefHeight="25.0" prefWidth="61.0" />
+      <Label layoutX="300.0" layoutY="410.0" text="Time:">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="hourChoiceBox" layoutX="56.0" layoutY="477.0" prefHeight="25.0" prefWidth="121.0" />
+      <ChoiceBox fx:id="hourChoiceBox" layoutX="300.0" layoutY="428.0" prefHeight="25.0" prefWidth="121.0" />
       <Label layoutX="319.0" layoutY="283.0" text="Seat:">
          <font>
             <Font name="Times New Roman Bold" size="17.0" />
@@ -67,10 +67,10 @@
             <Image url="@../../MovieImg/Spiderverse.jpg" />
          </ImageView>
          <ImageView fitHeight="184.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../../MovieImg/Oppenheimer.jpg" />
+            <Image url="@../../MovieImg/LaLaLand.jpg" />
          </ImageView>
       </HBox>
-      <Button fx:id="bookButton" layoutX="338.0" layoutY="458.0" mnemonicParsing="false" onAction="#onBookButtonClicked" prefHeight="39.0" prefWidth="121.0" text="Book Ticket" />
+      <Button fx:id="bookButton" layoutX="214.0" layoutY="470.0" mnemonicParsing="false" onAction="#onBookButtonClicked" prefHeight="39.0" prefWidth="121.0" text="Book Ticket" />
       <Button fx:id="logoutButton" layoutX="484.0" layoutY="2.0" mnemonicParsing="false" onAction="#Logout" text="Logout" />
    </AnchorPane>
 </Pane>
