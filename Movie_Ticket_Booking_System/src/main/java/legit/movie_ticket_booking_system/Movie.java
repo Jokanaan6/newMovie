@@ -63,6 +63,17 @@ public class Movie {
         String selectedYear = yearChoiceBox.getValue();
         String selectedMonth = monthChoiceBox.getValue();
 
+        // Check if any of the fields are not selected
+        if (selectedDay == null || selectedHour == null || selectedMovie == null ||
+                selectedSeat == null || selectedYear == null || selectedMonth == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Incomplete Booking");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill in all the fields before booking.");
+            alert.showAndWait();
+            return;
+        }
+
         String confirmationMessage = "You have booked a ticket for " + selectedMovie + " on " + selectedDay +
                 ", " + selectedMonth + " " + selectedYear + " at " + selectedHour + ":" +
                 ". Your seat is " + selectedSeat + ".";
@@ -97,4 +108,6 @@ public class Movie {
             }
         });
     }
+}
+
 }
