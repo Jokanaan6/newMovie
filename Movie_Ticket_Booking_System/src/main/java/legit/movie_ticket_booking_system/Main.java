@@ -13,8 +13,8 @@ import java.util.Objects;
 public class Main extends Application {
 
     private static Stage stage;
-    private static final HashMap<String, String> users = new HashMap<>();
-    public static String currentUsername;
+    private static final HashMap<String, UserAccount> users = new HashMap<>();
+    private static UserAccount currentUserAccount;
 
     public static void main(String[] args) {
         launch(args);
@@ -44,11 +44,21 @@ public class Main extends Application {
     }
 
     public static void registerUser(String username, String password) {
-        users.put(username, password);
+        users.put(username, new UserAccount(username, password));
     }
 
     public static boolean isValidUser(String username, String password) {
-        return users.containsKey(username) && users.get(username).equals(password);
+        return users.containsKey(username) && users.get(username).getPassword().equals(password);
+    }
+
+    public static void setCurrentUserAccount(UserAccount userAccount) {
+        currentUserAccount = userAccount;
+    }
+
+    public static BookingDetails createBookingDetails(String selectedDay, String selectedHour,
+                                                      String selectedMovie, String selectedSeat,
+                                                      String selectedYear, String selectedMonth) {
+        return new BookingDetails(currentUserAccount, selectedDay, selectedHour, selectedMovie,
+                selectedSeat, selectedYear, selectedMonth);
     }
 }
-

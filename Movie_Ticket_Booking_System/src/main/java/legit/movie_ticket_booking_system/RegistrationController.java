@@ -12,9 +12,6 @@ import java.io.IOException;
 
 public class RegistrationController {
 
-    public Label wrongLogIn;
-    public Button LoginBack;
-
     @FXML
     private TextField regUsername;
 
@@ -23,6 +20,12 @@ public class RegistrationController {
 
     @FXML
     private PasswordField regConfirmPassword;
+
+    @FXML
+    public Label wrongLogIn;
+
+    @FXML
+    public Button LoginBack;
 
     @FXML
     void registerUser(ActionEvent ignoredEvent) throws IOException {
@@ -38,11 +41,13 @@ public class RegistrationController {
             alert.showAndWait();
         } else {
             Main.registerUser(username, password);
+            Main.setCurrentUserAccount(new UserAccount(username, password)); // Save user account
             Main.changeScene("Login.fxml", 350, 450);
         }
     }
 
-    public void goBack(ActionEvent ignoredEvent) {
-
+    public void goBack(ActionEvent ignoredActionEvent) throws IOException {
+        Main.changeScene("Login.fxml", 350, 450);
     }
 }
+

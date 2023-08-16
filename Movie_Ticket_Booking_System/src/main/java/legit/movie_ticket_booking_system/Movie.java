@@ -49,10 +49,7 @@ public class Movie {
         monthChoiceBox.getItems().addAll("August");
     }
 
-    @FXML
-    private void Logout(ActionEvent ignoredEvent) throws IOException {
-        Main.changeScene("Login.fxml", 350, 450);
-    }
+    private BookingDetails selectedBooking;
 
     @FXML
     private void onBookButtonClicked() {
@@ -63,7 +60,6 @@ public class Movie {
         String selectedYear = yearChoiceBox.getValue();
         String selectedMonth = monthChoiceBox.getValue();
 
-        // Check if any of the fields are not selected
         if (selectedDay == null || selectedHour == null || selectedMovie == null ||
                 selectedSeat == null || selectedYear == null || selectedMonth == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -74,14 +70,19 @@ public class Movie {
             return;
         }
 
-        String confirmationMessage = "You have booked a ticket for " + selectedMovie + " on " + selectedDay +
-                ", " + selectedMonth + " " + selectedYear + " at " + selectedHour + ":" +
-                ". Your seat is " + selectedSeat + ".";
+
+        selectedBooking = Main.createBookingDetails(selectedDay, selectedHour, selectedMovie,
+                selectedSeat, selectedYear, selectedMonth);
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Booking Confirmation");
         alert.setHeaderText(null);
-        alert.setContentText(confirmationMessage);
+        alert.setContentText("You have selected:\n" +
+                "Movie: " + selectedBooking.selectedMovie() + "\n" +
+                "Date: " + selectedBooking.selectedDay() + " " + selectedBooking.selectedMonth() + " " + selectedBooking.selectedYear() + "\n" +
+                "Time: " + selectedBooking.selectedHour() + "\n" +
+                "Seat: " + selectedBooking.selectedSeat() + "\n" +
+                "Confirm your booking?");
 
         ButtonType confirmButtonType = new ButtonType("Confirm");
         ButtonType cancelButtonType = new ButtonType("Cancel");
@@ -95,7 +96,7 @@ public class Movie {
                     try {
                         root = loader.load();
                         Ticket ticketController = loader.getController();
-                        ticketController.setData(selectedMovie, selectedDay, selectedMonth, selectedYear, selectedHour, selectedSeat);
+                        ticketController.setData(selectedBooking);
                         Stage stage = new Stage();
                         stage.setScene(new Scene(root));
                         stage.show();
@@ -108,6 +109,10 @@ public class Movie {
             }
         });
     }
-}
 
+
+    @FXML
+    private void Logout(ActionEvent ignoredEvent) throws IOException {
+        Main.changeScene("Login.fxml", 350, 450);
+    }
 }

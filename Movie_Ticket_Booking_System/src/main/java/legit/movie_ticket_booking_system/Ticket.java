@@ -12,39 +12,38 @@ import java.io.IOException;
 public class Ticket {
 
     @FXML
-    public Button Another;
+    private Button Another;
 
     @FXML
-    public Label Date;
+    private Label Date;
 
     @FXML
     public Button Exit;
 
     @FXML
-    public Label Movie;
+    private Label Movie;
 
     @FXML
-    public Label Seat;
+    private Label Seat;
 
     @FXML
-    public Label Time;
+    private Label Time;
 
     @FXML
     public Label Username;
 
-    public void initialize() {
-        // Get the stored username from Main class
-        String username = Main.currentUsername;
+    public BookingDetails bookingDetails;
 
-        // Update the label with the username
-        Username.setText(username);
-    }
+    public void setData(BookingDetails bookingDetails) {
+        this.bookingDetails = bookingDetails;
+        Movie.setText(bookingDetails.selectedMovie());
+        Date.setText(bookingDetails.selectedDay() + " " + bookingDetails.selectedMonth() + " " + bookingDetails.selectedYear());
+        Time.setText(bookingDetails.selectedHour());
+        Seat.setText(bookingDetails.selectedSeat());
 
-    public void setData(String movie, String day, String month, String year, String hour, String seat) {
-        Movie.setText(movie);
-        Date.setText(day + " " + month + " " + year);
-        Time.setText(hour);
-        Seat.setText(seat);
+
+        UserAccount user = bookingDetails.user();
+        Username.setText(user.getUsername());
     }
 
     public void Back(ActionEvent ignoredEvent) throws IOException {

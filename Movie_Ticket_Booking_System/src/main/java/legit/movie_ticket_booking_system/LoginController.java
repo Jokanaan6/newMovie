@@ -18,28 +18,28 @@ public class LoginController {
     public Button button;
 
     @FXML
-    public PasswordField password;
+    private PasswordField password;
 
     @FXML
-    public TextField username;
+    private TextField username;
 
     @FXML
-    public Label wrongLogIn;
+    private Label wrongLogIn;
 
     public Main main;
 
     @FXML
-    void Switchregister(ActionEvent ignoredEvent) throws IOException {
+    private void Switchregister(ActionEvent ignoredEvent) throws IOException {
         Main.changeScene("Register.fxml", 320, 500);
     }
 
     @FXML
-    void userLogIn(ActionEvent ignoredEvent) throws IOException {
+    private void userLogIn(ActionEvent ignoredEvent) throws IOException {
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
 
         if (Main.isValidUser(enteredUsername, enteredPassword)) {
-            Main.currentUsername = enteredUsername;
+            Main.setCurrentUserAccount(new UserAccount(enteredUsername, enteredPassword)); // Save user account
             Main.changeScene("Movie_Selection.fxml", 600, 600);
         } else {
             wrongLogIn.setText("Invalid username or password.");

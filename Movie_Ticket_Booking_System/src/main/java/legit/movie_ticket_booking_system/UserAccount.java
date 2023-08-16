@@ -1,8 +1,8 @@
 package legit.movie_ticket_booking_system;
 
 public class UserAccount {
-    private final String username;
-    private final String password;
+    private String username;
+    private String password;
 
     public UserAccount(String username, String password) {
         this.username = username;
@@ -17,4 +17,5 @@ public class UserAccount {
         return password;
     }
 }
+
 
