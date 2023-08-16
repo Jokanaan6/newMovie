@@ -4,13 +4,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.RegistrationController">
-   <AnchorPane layoutX="-2.0" prefHeight="402.0" prefWidth="343.0">
-      <Label layoutX="80.0" layoutY="27.0" text="Register">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.RegistrationController">
+   <AnchorPane layoutX="-2.0" prefHeight="364.0" prefWidth="343.0">
+      <Label layoutX="118.0" layoutY="38.0" text="Register">
          <font>
             <Font name="Times New Roman Bold" size="50.0" />
          </font>
@@ -20,11 +22,14 @@
       <Label layoutX="71.0" layoutY="131.0" text="Username:" />
       <Label layoutX="73.0" layoutY="172.0" text="Password:" />
       <Button layoutX="139.0" layoutY="260.0" mnemonicParsing="false" onAction="#registerUser" text="Register" />
-      <Label layoutX="70.0" layoutY="360.0" text="Already have an account?" />
-      <Button fx:id="LoginBack" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="189.0" layoutY="356.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: transparent;" text="Login here" textFill="#1052c3" AnchorPane.leftAnchor="189.0" />
       <PasswordField fx:id="regConfirmPassword" layoutX="132.0" layoutY="201.0" promptText="Confirm Password" />
       <Label layoutX="31.0" layoutY="205.0" text="Confirm Password:" />
       <Label fx:id="registrationStatus" layoutX="155.0" layoutY="234.0" />
       <Label fx:id="wrongLogIn" layoutX="141.0" layoutY="234.0" />
+      <ImageView fitHeight="65.0" fitWidth="66.0" layoutX="48.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../OtherImg/register_icon.png" />
+         </image>
+      </ImageView>
    </AnchorPane>
 </Pane>

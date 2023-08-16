@@ -4,13 +4,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.LoginController">
    <AnchorPane layoutX="-2.0" prefHeight="402.0" prefWidth="343.0">
-      <Label layoutX="109.0" layoutY="25.0" text="Login">
+      <Label layoutX="131.0" layoutY="23.0" prefHeight="66.0" prefWidth="139.0" text="Login">
          <font>
             <Font name="Times New Roman Bold" size="50.0" />
          </font>
@@ -24,5 +26,10 @@
       <Button fx:id="Regis" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="189.0" layoutY="356.0" mnemonicParsing="false" onAction="#Switchregister" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: transparent;" text="Register here" textFill="#1052c3" AnchorPane.leftAnchor="189.0" />
       <Label layoutX="158.0" layoutY="122.0" />
       <Label fx:id="wrongLogIn" layoutX="132.0" layoutY="238.0" />
+      <ImageView fitHeight="66.0" fitWidth="75.0" layoutX="63.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../OtherImg/account_icon.png" />
+         </image>
+      </ImageView>
    </AnchorPane>
 </Pane>

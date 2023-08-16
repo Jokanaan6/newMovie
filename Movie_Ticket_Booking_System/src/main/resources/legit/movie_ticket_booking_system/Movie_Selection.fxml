@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -13,44 +12,42 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="legit.movie_ticket_booking_system.Movie">
    <AnchorPane layoutX="2.0" prefHeight="529.0" prefWidth="544.0">
-      <Label layoutX="92.0" layoutY="23.0" text="Movie Ticket Booking System">
+      <Label layoutX="96.0" layoutY="32.0" text="Movie Ticket Booking System">
          <font>
             <Font name="Times New Roman Bold" size="28.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="283.0" text="Movie Selection:">
+      <Label layoutX="71.0" layoutY="318.0" text="Movie Selection:">
          <font>
             <Font name="Times New Roman Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="390.0" text="Schedule:">
+      <Label layoutX="75.0" layoutY="384.0" text="Schedule:">
          <font>
             <Font name="Times New Roman Bold" size="17.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="movieChoiceBox" layoutX="52.0" layoutY="303.0" prefWidth="150.0" />
-      <CheckBox layoutX="55.0" layoutY="348.0" mnemonicParsing="false" text="3D" />
-      <CheckBox layoutX="141.0" layoutY="348.0" mnemonicParsing="false" text="2D" />
-      <Label layoutX="56.0" layoutY="410.0" text="Date:">
+      <ChoiceBox fx:id="movieChoiceBox" layoutX="71.0" layoutY="338.0" prefWidth="150.0" />
+      <Label layoutX="75.0" layoutY="401.0" text="Date:">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="monthChoiceBox" layoutX="56.0" layoutY="428.0" prefHeight="25.0" prefWidth="81.0" />
-      <ChoiceBox fx:id="dayChoiceBox" layoutX="137.0" layoutY="428.0" prefHeight="25.0" prefWidth="43.0" />
-      <ChoiceBox fx:id="yearChoiceBox" layoutX="180.0" layoutY="428.0" prefHeight="25.0" prefWidth="61.0" />
-      <Label layoutX="300.0" layoutY="410.0" text="Time:">
+      <ChoiceBox fx:id="monthChoiceBox" layoutX="75.0" layoutY="416.0" prefHeight="25.0" prefWidth="81.0" />
+      <ChoiceBox fx:id="dayChoiceBox" layoutX="156.0" layoutY="416.0" prefHeight="25.0" prefWidth="43.0" />
+      <ChoiceBox fx:id="yearChoiceBox" layoutX="199.0" layoutY="416.0" prefHeight="25.0" prefWidth="61.0" />
+      <Label layoutX="337.0" layoutY="401.0" text="Time:">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="hourChoiceBox" layoutX="300.0" layoutY="428.0" prefHeight="25.0" prefWidth="121.0" />
-      <Label layoutX="319.0" layoutY="283.0" text="Seat:">
+      <ChoiceBox fx:id="hourChoiceBox" layoutX="338.0" layoutY="416.0" prefHeight="25.0" prefWidth="121.0" />
+      <Label layoutX="338.0" layoutY="318.0" text="Seat:">
          <font>
             <Font name="Times New Roman Bold" size="17.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="seatChoiceBox" layoutX="319.0" layoutY="303.0" prefHeight="25.0" prefWidth="121.0" />
+      <ChoiceBox fx:id="seatChoiceBox" layoutX="338.0" layoutY="338.0" prefHeight="25.0" prefWidth="121.0" />
       <Label layoutX="210.0" layoutY="63.0" text="Now Showing!" textFill="RED">
          <font>
             <Font name="Times New Roman Bold" size="20.0" />
@@ -70,7 +67,41 @@
             <Image url="@../../MovieImg/LaLaLand.jpg" />
          </ImageView>
       </HBox>
-      <Button fx:id="bookButton" layoutX="214.0" layoutY="470.0" mnemonicParsing="false" onAction="#onBookButtonClicked" prefHeight="39.0" prefWidth="121.0" text="Book Ticket" />
-      <Button fx:id="logoutButton" layoutX="484.0" layoutY="2.0" mnemonicParsing="false" onAction="#Logout" text="Logout" />
+      <Button fx:id="bookButton" layoutX="202.0" layoutY="477.0" mnemonicParsing="false" onAction="#onBookButtonClicked" prefHeight="39.0" prefWidth="144.0" text="Book Ticket">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../OtherImg/ticket.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#Logout" prefHeight="36.0" prefWidth="97.0" text="Logout">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../OtherImg/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <HBox layoutX="239.0" layoutY="459.0" prefHeight="18.0" prefWidth="109.0">
+         <children>
+            <Label fx:id="price">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text=" Php">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </AnchorPane>
 </Pane>
