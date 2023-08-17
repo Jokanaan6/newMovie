@@ -31,7 +31,8 @@ public class Ticket {
 
     @FXML
     public Label Username;
-
+    @FXML
+    public Label Price;
     public BookingDetails bookingDetails;
 
     public void setData(BookingDetails bookingDetails) {
@@ -40,11 +41,11 @@ public class Ticket {
         Date.setText(bookingDetails.selectedDay() + " " + bookingDetails.selectedMonth() + " " + bookingDetails.selectedYear());
         Time.setText(bookingDetails.selectedHour());
         Seat.setText(bookingDetails.selectedSeat());
-
-
+        Price.setText(bookingDetails.moviePrice() + " Php");
         UserAccount user = bookingDetails.user();
-        Username.setText(user.getUsername());
+        Username.setText(user.username());
     }
+
 
     public void Back(ActionEvent ignoredEvent) throws IOException {
         Main.changeScene("Movie_Selection.fxml", 600, 600);

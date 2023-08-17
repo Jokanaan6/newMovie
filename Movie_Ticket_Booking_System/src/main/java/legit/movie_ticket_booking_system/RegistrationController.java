@@ -33,7 +33,13 @@ public class RegistrationController {
         String password = regPassword.getText();
         String confirmPassword = regConfirmPassword.getText();
 
-        if (!password.equals(confirmPassword)) {
+        if (username.isEmpty() || password.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Empty Fields");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill in both username and password fields.");
+            alert.showAndWait();
+        } else if (!password.equals(confirmPassword)) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Password Mismatch");
             alert.setHeaderText(null);
@@ -45,6 +51,7 @@ public class RegistrationController {
             Main.changeScene("Login.fxml", 350, 450);
         }
     }
+
 
     public void goBack(ActionEvent ignoredActionEvent) throws IOException {
         Main.changeScene("Login.fxml", 350, 450);

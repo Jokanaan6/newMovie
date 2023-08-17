@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +17,7 @@ public class Movie {
 
     @FXML
     public Button logoutButton;
+    public Label price;
 
     @FXML
     private ChoiceBox<String> dayChoiceBox;
@@ -47,7 +45,14 @@ public class Movie {
         seatChoiceBox.getItems().addAll("A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3");
         yearChoiceBox.getItems().addAll("2023");
         monthChoiceBox.getItems().addAll("August");
+        movieChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                int moviePrice = calculateMoviePrice(newValue);
+                price.setText("Price: " + moviePrice);
+            }
+        });
     }
+
 
     private BookingDetails selectedBooking;
 
@@ -59,9 +64,9 @@ public class Movie {
         String selectedSeat = seatChoiceBox.getValue();
         String selectedYear = yearChoiceBox.getValue();
         String selectedMonth = monthChoiceBox.getValue();
+        int moviePrice = calculateMoviePrice(selectedMovie);
 
-        if (selectedDay == null || selectedHour == null || selectedMovie == null ||
-                selectedSeat == null || selectedYear == null || selectedMonth == null) {
+        if (selectedDay == null || selectedHour == null || selectedSeat == null || selectedYear == null || selectedMonth == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Incomplete Booking");
             alert.setHeaderText(null);
@@ -72,7 +77,7 @@ public class Movie {
 
 
         selectedBooking = Main.createBookingDetails(selectedDay, selectedHour, selectedMovie,
-                selectedSeat, selectedYear, selectedMonth);
+                selectedSeat, selectedYear, selectedMonth, moviePrice);
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Booking Confirmation");
@@ -82,11 +87,13 @@ public class Movie {
                 "Date: " + selectedBooking.selectedDay() + " " + selectedBooking.selectedMonth() + " " + selectedBooking.selectedYear() + "\n" +
                 "Time: " + selectedBooking.selectedHour() + "\n" +
                 "Seat: " + selectedBooking.selectedSeat() + "\n" +
+                "Price: "+ selectedBooking.moviePrice()+ "\n" +
                 "Confirm your booking?");
 
         ButtonType confirmButtonType = new ButtonType("Confirm");
         ButtonType cancelButtonType = new ButtonType("Cancel");
         alert.getButtonTypes().setAll(confirmButtonType, cancelButtonType);
+
 
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == confirmButtonType) {
@@ -109,7 +116,15 @@ public class Movie {
             }
         });
     }
-
+    private int calculateMoviePrice(String selectedMovie) {
+        return switch (selectedMovie) {
+            case "Spider-Man: Across the Spider-Verse" -> 200;
+            case "Barbie" -> 230;
+            case "Oppenheimer" -> 190;
+            case "La La Land" -> 250;
+            default -> 0;
+        };
+    }
 
     @FXML
     private void Logout(ActionEvent ignoredEvent) throws IOException {

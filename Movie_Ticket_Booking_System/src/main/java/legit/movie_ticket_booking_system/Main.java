@@ -48,7 +48,7 @@ public class Main extends Application {
     }
 
     public static boolean isValidUser(String username, String password) {
-        return users.containsKey(username) && users.get(username).getPassword().equals(password);
+        return users.containsKey(username) && users.get(username).password().equals(password);
     }
 
     public static void setCurrentUserAccount(UserAccount userAccount) {
@@ -57,8 +57,8 @@ public class Main extends Application {
 
     public static BookingDetails createBookingDetails(String selectedDay, String selectedHour,
                                                       String selectedMovie, String selectedSeat,
-                                                      String selectedYear, String selectedMonth) {
+                                                      String selectedYear, String selectedMonth, int moviePrice) {
         return new BookingDetails(currentUserAccount, selectedDay, selectedHour, selectedMovie,
-                selectedSeat, selectedYear, selectedMonth);
+                selectedSeat, selectedYear, selectedMonth, moviePrice);
     }
 }
